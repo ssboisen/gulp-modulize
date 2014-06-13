@@ -6,7 +6,7 @@ callsite   = require 'callsite'
 
 resolveModulePath = (f) ->
   dirname = path.dirname f
-  filename = path.basename f, '.coffee'
+  filename = path.basename f
   path.join dirname, filename
 
 rewriteGlobs = (globs, ns) ->
@@ -47,11 +47,11 @@ gulpStub = (gulp, ns) ->
 module.exports = (gulp, basePath) ->
   basePath = "*/" unless basePath
 
-  globPath = path.join basePath, "**/Gulpfile.coffee"
+  globPath = path.join basePath, "**/gulpfile.*"
   stack = callsite()
   rootPath = path.dirname stack[1].getFileName()
 
-  _.chain glob.sync globPath
+  _.chain glob.sync globPath, { nocase: true }
     .flatten (f) ->
       ns = path.dirname f
       modulePath = resolveModulePath f
