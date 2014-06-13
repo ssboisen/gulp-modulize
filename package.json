@@ -17,5 +17,14 @@
     "gulp": "^3.8.0",
     "lodash": "^2.4.1",
     "proxyquire": "^1.0.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssboisen/gulp-modulize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ssboisen/gulp-modulize/issues"
+  },
+  "homepage": "https://github.com/ssboisen/gulp-modulize"
 }
