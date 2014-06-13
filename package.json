@@ -1,0 +1,21 @@
+{
+  "name": "gulp-modulize",
+  "version": "0.0.1",
+  "description": "Makes working with modulized Gulpfiles in subdirectories a breeze",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Simon Skov Boisen <simon@skov-boisen.dk>",
+  "license": "MIT",
+  "dependencies": {
+    "callsite": "^1.0.0",
+    "glob": "^4.0.2",
+    "gulp": "^3.8.0",
+    "lodash": "^2.4.1",
+    "proxyquire": "^1.0.1"
+  }
+}
