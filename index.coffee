@@ -3,6 +3,7 @@ path       = require 'path'
 _          = require 'lodash'
 proxyquire = require 'proxyquire'
 callsite   = require 'callsite'
+minimatch  = require 'minimatch'
 
 resolveModulePath = (f) ->
   dirname = path.dirname f
@@ -52,6 +53,8 @@ module.exports = (gulp, basePath) ->
   rootPath = path.dirname stack[1].getFileName()
 
   _.chain glob.sync globPath, { nocase: true }
+    .filter (f) ->
+      minimatch f, '!**/node_modules/**/gulpfile.*'
     .flatten (f) ->
       ns = path.dirname f
       modulePath = resolveModulePath f
